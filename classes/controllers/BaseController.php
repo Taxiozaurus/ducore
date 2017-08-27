@@ -8,6 +8,12 @@ use \Models\User;
 
 class BaseController {
 
+	public function index() {
+		$response = new Response;
+		$response->setBody('Hello world!');
+		$response->send();
+	}
+
 	public function test() {
 		$response = new Response;
 		$response->json([
