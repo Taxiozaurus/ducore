@@ -27,6 +27,11 @@ try {
 	$config = require '../config/default.php';
 
 	/**
+	 * Set DB config
+	 */
+	require '../config/database.php';
+
+	/**
 	 * Load the routes
 	 */
 	require '../config/routes.php';

@@ -35,7 +35,7 @@ class Response {
 	 * @return void
 	 * @author Taxiozaurus
 	 */
-	public function _constructor() {
+	public function __constructor() {
 	}
 
 	/**

@@ -150,6 +150,6 @@ class Route {
 	public static function param(string $key = NULL, $default = NULL) {
 		if (is_null($key))
 			return static::$_params;
-		return Arr::get(static::$_routes, $key, $default);
+		return Arr::get(static::$_params, $key, $default);
 	}
 }

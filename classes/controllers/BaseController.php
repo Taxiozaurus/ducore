@@ -4,6 +4,7 @@ namespace Controllers;
 use \Response;
 use \Request;
 use \Route;
+use \Models\User;
 
 class BaseController {
 
@@ -14,6 +15,16 @@ class BaseController {
 			'post' => Request::post(),
 			'uri' => Request::uri(),
 			'params' => Route::param()
+		])->send();
+	}
+
+	public function fetch_user() {
+		$model = new User(Route::param('id'));
+
+		$response = new Response;
+		$response->json([
+			'data' => $model->as_array(),
+			'loaded' => $model->loaded()
 		])->send();
 	}
 }

@@ -3,7 +3,7 @@
 /**
  * Set database connection constants
  */
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'app');
-define('DB_USER', 'root');
-define('DP_PASS', '');
+const DB_HOST = 'localhost';
+const DB_NAME = 'app';
+const DB_USER = 'root';
+const DB_PASS = '';

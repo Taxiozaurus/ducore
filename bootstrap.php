@@ -32,13 +32,13 @@ spl_autoload_register(function ($class, $directory = '../classes') {
 /**
  * List of core class names
  */
-$classes = scandir('../classes');
+$classes = scandir('../ducore');
 
 /**
  * Load all the core classes here
  */
 foreach ($classes as $class) {
 	if (substr($class, -4) === '.php') {
-		require "../classes/{$class}";
+		require "../ducore/{$class}";
 	}
 }

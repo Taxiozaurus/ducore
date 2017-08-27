@@ -17,6 +17,6 @@ class Arr {
 	 * @author Taxiozaurus
 	 */
 	public static function get(array $arr, $key = NULL, $default = NULL) {
-		return array_key_exists($arr, $key) ? $arr[$key] : $default;
+		return array_key_exists($key, $arr) ? $arr[$key] : $default;
 	}
 }

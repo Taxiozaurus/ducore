@@ -16,7 +16,7 @@ class App {
 	 * @return void
 	 * @author Taxiozaurus
 	 */
-	public function _construct(array $config) {
+	public function __construct(array $config) {
 		$this->_config = $config;
 	}
 
