@@ -3,6 +3,8 @@
 /**
  * Base model for interaction with DB at object level
  *
+ * Extend from this class when creating new model classes.
+ * 
  * @author Taxiozaurus
  */
 class BaseModel extends stdClass {
