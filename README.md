@@ -6,6 +6,10 @@ This codebase borrows many ideas from many places to create very simple (or at l
 
 > Note that this codebase was built for PHP 7.1+
 
+## Disclaimer
+
+This framework is still WIP and noone knows if it will ever get a stable release.
+
 ### Autoloading rules:
 + All classes must be inside `classes` folder
 + All classes must be namespaced with their respective folder names (ex: `Controllers` inside controllers folder)
