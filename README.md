@@ -26,7 +26,7 @@ All framework specific files are located in the root and in `ducore` folder.
 This repository comes with basic configuration files added and basic `index.php` to allow for easy start of a new project.
 
 Following is the current general code structure
-```py
+```
 root
 |
 |--classes # Should contain all project classes
