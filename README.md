@@ -35,7 +35,7 @@ root
 |
 |--classes # Should contain all project classes
 |  |--controllers       # All your controllers should be here
-|  |  `--BaseController # Basic controller included in the project
+|  |  `--Home           # Basic controller included in the project
 |  |--models            # All models must be here
 |  |  `--User           # Basic model included in the project
 |  `--views             # All view control classes must be here
@@ -47,19 +47,24 @@ root
 |
 |--ducore # Framework classes
 |  |--_readme.md
-|  |--App        # Main application class
-|  |--Arr        # Array utility class
-|  |--BaseModel  # Base Model class
-|  |--Database   # Database connection class
-|  |--Json       # JSON utility class
-|  |--Request    # Request utility class
-|  |--Response   # Response utility class
-|  |--Route      # Route handler
-|  `--Strings    # String utility class
+|  |--App            # Main application class
+|  |--Arr            # Array utility class
+|  |--BaseController # Base Controller class
+|  |--BaseModel      # Base Model class
+|  |--BaseView       # Base View class
+|  |--Database       # Database connection class
+|  |--Json           # JSON utility class
+|  |--Request        # Request utility class
+|  |--Response       # Response utility class
+|  |--Route          # Route handler
+|  `--Strings        # String utility class
 |
 |--public # This should be your vhost root
 |  |--.htaccess # Example htaccess for apache
 |  `--index.php # Example index.php
+|
+|--templates
+|  `--index.php
 |
 |--bootstrap.php # Framework bootstrapper
 |--phpinfo.php

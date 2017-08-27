@@ -82,7 +82,9 @@ class Response {
 	}
 
 	/**
-	 * Sends the response to the client
+	 * Sends the response to the client and closes the connection
+	 * @note that code will still continue to run 
+	 *       so you can do some postprocessing after sending a response
 	 *
 	 * @param int $code Default 200, response status code
 	 * @return void
@@ -90,18 +92,25 @@ class Response {
 	 */
 	public function send(int $code = 200) {
 		
+		// Set response code
+		http_response_code($code);
+
+		if ($this->_body)
+			echo $this->_body;
+		
+		$size = ob_get_length();
+		header('Connection: close');
+		header('Content-Length:' . $size);
+		
+		// Set body type
+		header('Content-Type: ' . $this->_type);
+		
 		// Begin by settin headers
 		foreach ($this->_head as $row) {
 			header($row);
 		}
 
-		// Set response code
-		http_response_code($code);
-
-		// Set body type
-		header('Content-Type: ' . $this->_type);
-
-		if ($this->_body)
-			echo $this->_body;
+		ob_end_flush();
+		flush();
 	}
 }

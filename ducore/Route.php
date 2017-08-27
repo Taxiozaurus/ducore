@@ -84,7 +84,7 @@ class Route {
 		$name = Strings::removeSpaces($name);
 		$route = Arr::get(static::$_routes, strtolower($name), '');
 
-		$path = $route['path'];
+		$path = str_replace(['(', ')'], '', $route['path']);
 
 		$list = [];
 		$keys = preg_match_all('/<(\w+?)>/', $path, $list);
@@ -108,7 +108,7 @@ class Route {
 	 * @return string|null
 	 * @author Taxiozaurus
 	 */
-	public static function find(string $path): ?string {
+	public static function find(string $path): ?array {
 		$row = NULL;
 		$path = trim($path, '/');
 		foreach (static::$_routes as $route) {
@@ -120,8 +120,9 @@ class Route {
 			}
 		}
 		if (is_array($row))
-			return '\\' . implode('::', $row['method']);
-		return NULL;
+			return $row['method'];
+		
+		throw new Exception('404 Not Found', 404);
 	}
 
 	/**

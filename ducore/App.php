@@ -41,8 +41,16 @@ class App {
 	public function run() {
 		$callable = Route::find(Request::uri());
 
-		if ($callable)
-			return call_user_func($callable);
-		throw new Exception('404 Not found');
+		$className = '\\' . trim($callable[0], '\\');
+		$funcName = trim($callable[1]);
+
+		array_shift($callable);
+		array_shift($callable);
+
+		$class = new $className(...$callable);
+
+		$class->before();
+		$class->{$funcName}();
+		$class->after();
 	}
 }

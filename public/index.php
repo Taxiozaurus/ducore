@@ -2,16 +2,6 @@
 session_start();
 
 /**
- * Exception handler
- */
-function handle_exception(Exception $e) {
-	echo json_encode([
-		'message' => $e->getMessage(),
-		'trace' => $e->getTrace()
-	]);
-}
-
-/**
  * Run the app
  */
 try {
@@ -44,4 +34,20 @@ try {
 	$app->run();
 } catch (Exception $e) {
 	handle_exception($e);
+}
+
+/**
+ * Exception handler
+ */
+function handle_exception(Exception $e) {
+	$response = new Response;
+	$response->json([
+		'message' => $e->getMessage(),
+		'trace' => $e->getTrace()
+	]);
+
+	if ($e->getCode() > 300)
+		$response->send($e->getCode());
+	$response->send(500);
+	exit;
 }
