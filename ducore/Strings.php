@@ -1,4 +1,5 @@
 <?php
+namespace du;
 
 /**
  * Utility class for working with strings

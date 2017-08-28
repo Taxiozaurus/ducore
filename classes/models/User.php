@@ -1,6 +1,6 @@
 <?php
 namespace Models;
 
-class User extends \BaseModel {
+class User extends \du\BaseModel {
 	protected $_table = 'users';
 }

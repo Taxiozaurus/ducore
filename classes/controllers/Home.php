@@ -1,12 +1,12 @@
 <?php
 namespace Controllers;
 
-use \Response;
-use \Request;
-use \Route;
+use \du\Response;
+use \du\Request;
+use \du\Route;
 use \Models\User;
 
-class Home extends \BaseController {
+class Home extends \du\BaseController {
 
 	public function index() {
 		/*

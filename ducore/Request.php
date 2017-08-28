@@ -1,4 +1,7 @@
 <?php
+namespace du;
+
+use \Exception;
 
 /**
  * Interface for interacting with the request data

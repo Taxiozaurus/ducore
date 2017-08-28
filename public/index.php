@@ -29,7 +29,7 @@ try {
 	/**
 	 * Init the app
 	 */
-	$app = new App($config);
+	$app = new \du\App($config);
 
 	$app->run();
 } catch (Exception $e) {
@@ -40,7 +40,7 @@ try {
  * Exception handler
  */
 function handle_exception(Exception $e) {
-	$response = new Response;
+	$response = new \du\Response;
 	$response->json([
 		'message' => $e->getMessage(),
 		'trace' => $e->getTrace()

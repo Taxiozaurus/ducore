@@ -1,4 +1,7 @@
 <?php
+namespace du;
+
+use \PDO;
 
 /**
  * Database interaction class

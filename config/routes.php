@@ -18,10 +18,10 @@
  * 1st must be function name
  * All following keys in the array will be passed to the class constructor
  */
-Route::set('test-route', 'hello-world(/<id>)', ['Controllers\Home', 'test']);
-Route::set('db-test', 'user(/<id>)', ['Controllers\Home', 'fetchUser']);
+du\Route::set('test-route', 'hello-world(/<id>)', ['Controllers\Home', 'test']);
+du\Route::set('db-test', 'user(/<id>)', ['Controllers\Home', 'fetchUser']);
 
-Route::set('404', '404', ['Controllers\Home', 'notFound']);
+du\Route::set('404', '404', ['Controllers\Home', 'notFound']);
 
 // Default Route
-Route::set('default', '(<action>(/<id>))', ['Controllers\Home', 'index']);
+du\Route::set('default', '(<action>(/<id>))', ['Controllers\Home', 'index']);

@@ -1,4 +1,7 @@
 <?php
+namespace du;
+
+use \Exception;
 
 /**
  * Undocumented class

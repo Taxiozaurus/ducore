@@ -1,4 +1,7 @@
 <?php
+namespace du;
+
+use \Exception;
 
 /**
  * Build a response and send it

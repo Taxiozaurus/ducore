@@ -1,4 +1,8 @@
 <?php
+namespace du;
+
+use \PDO;
+use \Exception;
 
 /**
  * Base model for interaction with DB at object level
@@ -7,7 +11,7 @@
  * 
  * @author Taxiozaurus
  */
-class BaseModel extends stdClass {
+class BaseModel extends \stdClass {
 
 	/**
 	 * Table name

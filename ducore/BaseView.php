@@ -1,4 +1,5 @@
 <?php
+namespace du;
 
 /**
  * Base View
@@ -45,7 +46,6 @@ class BaseView {
 	 *
 	 * @param string $template
 	 * @return string
-	 * @throws Exception
 	 * @author Taxiozaurus
 	 */
 	public function render(string $template = NULL): string {
@@ -58,5 +58,16 @@ class BaseView {
 			return $rendered;
 		}
 		return '';
+	}
+
+	/**
+	 * Echo out a string
+	 *
+	 * @param string $str
+	 * @return void
+	 * @author Taxiozaurus
+	 */
+	protected function e(string $str) {
+		echo $str;
 	}
 }

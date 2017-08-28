@@ -1,4 +1,5 @@
 <?php
+namespace du;
 
 /**
  * Main app class
