@@ -47,11 +47,12 @@ root
 |
 |--ducore # Framework classes
 |  |--_readme.md
-|  |--App            # Main application class
 |  |--Arr            # Array utility class
 |  |--BaseController # Base Controller class
 |  |--BaseModel      # Base Model class
 |  |--BaseView       # Base View class
+|  |--Conf           # Configuration wrapper
+|  |--Core           # Main application class
 |  |--Database       # Database connection class
 |  |--Json           # JSON utility class
 |  |--Request        # Request utility class
