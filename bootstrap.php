@@ -30,6 +30,24 @@ spl_autoload_register(function ($class, $directory = '../classes') {
 });
 
 /**
+ * Fatal error handler
+ *
+ * @return void
+ * @author Taxiozaurus
+ */
+function exitHandler() {
+	$err = error_get_last();
+	if (is_array($err)
+		AND isset($err['type'])
+		AND $err['type'] === E_ERROR) {
+		echo '<pre>';
+		print_r($err);
+		echo '</pre>';
+	}
+}
+register_shutdown_function('exitHandler');
+
+/**
  * List of core class names
  */
 $classes = scandir('../ducore');

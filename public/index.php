@@ -12,9 +12,11 @@ try {
 	require '../bootstrap.php';
 
 	/**
-	 * Define constants
+	 * Get the config
 	 */
 	$config = require '../config/default.php';
+	\du\Conf::init($config);
+	unset($config);
 
 	/**
 	 * Set DB config
@@ -29,7 +31,7 @@ try {
 	/**
 	 * Init the app
 	 */
-	$app = new \du\App($config);
+	$app = new \du\Core;
 
 	$app->run();
 } catch (Exception $e) {

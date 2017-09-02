@@ -1,1 +1,1 @@
-Homepage!!
+<?=$this->e($conf->path('site.name'))?> Homepage!!

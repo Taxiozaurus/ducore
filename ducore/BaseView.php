@@ -52,6 +52,7 @@ class BaseView {
 		if ($template) {
 			ob_start();
 			$du = (object) $this->_vars;
+			$conf = new Conf;
 			include '../templates/index.php';
 			$rendered = ob_get_contents();
 			ob_end_clean();
@@ -69,5 +70,27 @@ class BaseView {
 	 */
 	protected function e(string $str) {
 		echo $str;
+	}
+
+	/**
+	 * Print_r given data
+	 *
+	 * @param mixed $data
+	 * @return void
+	 * @author Taxiozaurus
+	 */
+	protected function p($data) {
+		print_r($data);
+	}
+
+	/**
+	 * Json encode and echo given data
+	 *
+	 * @param mixed $data
+	 * @return void
+	 * @author Taxiozaurus
+	 */
+	protected function j($data) {
+		echo JSON::encode($data);
 	}
 }
